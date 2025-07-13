@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icon-01.png" type="image/x-icon" />
+    <title>Online_courses</title>
+    <style>
+        /* all website */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f6ff;
+        }
+
+        /* navigation */
+        .navbar {
+            background-color: #002e5b;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            margin-bottom: 10px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            max-width: 180px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .show {
+            display: flex !important;
+        }
+
+        /* part--one */
+        h2 {
+            font-size: 32px;
+            color: #1f2e88;
+            margin: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .psp {
+            justify-content: center;
+            text-align: center;
+            color: #444;
+            margin: 10px 0 30px;
+            line-height: 1.6;
+        }
+
+        /* part--two */
+        .table-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background-color: #002e5b;
+            color: white;
+        }
+
+        th {
+            text-align: left;
+            padding: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td {
+            text-align: left;
+            padding: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #0073e625;
+        }
+
+        /* lasst--part */
+        .alig {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #002e5b;
+        }
+
+        .footer {
+            color: #ccc;
+            display: flex;
+            gap: 200px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #0073e6;
+        }
+
+        .footer-logo {
+            color: #0073e6;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: right;
+            padding: 6px;
+            text-transform: capitalize;
+            font-size: 8px;
+            border-top: 0 solid #222;
+            background-color: #002e5b;
+            color: white;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+        /* Responsive Navigation Toggle */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #002e5b;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+                width: 100%;
+            }
+
+            thead {
+                display: none;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigations -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="date.html" class="logo">
+                <img src="logo-01.png" alt="logo" />
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Gallery.htMl">Gallery</a></li>
+                <li><a href="date.html">Dates</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <!-- part--one -->
+        <h2>Our Learning Hubs Across Somalia</h2>
+        <p class="psp">
+            Our learning hubs across Somalia help students access quality online education, local study spaces,
+            and community support. We’re committed to empowering learners everywhere to reach their full potential.
+        </p>
+        <!-- part--two -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Learning Hub Location</th>
+                        <th>Enrolled Students</th>
+                        <th>Active Courses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="City">Mogadishu</td>
+                        <td data-label="Learning Hub Location">KM4, Hodan District, Mogadishu</td>
+                        <td data-label="Enrolled Students">2,300</td>
+                        <td data-label="Active Courses">55</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Hargeisa</td>
+                        <td data-label="Learning Hub Location">Sha’ab Area, Hargeisa</td>
+                        <td data-label="Enrolled Students">1,750</td>
+                        <td data-label="Active Courses">48</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Garowe</td>
+                        <td data-label="Learning Hub Location">New Center Street, Garowe</td>
+                        <td data-label="Enrolled Students">900</td>
+                        <td data-label="Active Courses">32</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Bosaso</td>
+                        <td data-label="Learning Hub Location">Port View Road, Bosaso</td>
+                        <td data-label="Enrolled Students">850</td>
+                        <td data-label="Active Courses">30</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Kismayo</td>
+                        <td data-label="Learning Hub Location">University Avenue, Kismayo</td>
+                        <td data-label="Enrolled Students">720</td>
+                        <td data-label="Active Courses">28</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Baidoa</td>
+                        <td data-label="Learning Hub Location">Education Road, Baidoa</td>
+                        <td data-label="Enrolled Students">680</td>
+                        <td data-label="Active Courses">25</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Galkayo</td>
+                        <td data-label="Learning Hub Location">Knowledge Plaza, Galkayo</td>
+                        <td data-label="Enrolled Students">600</td>
+                        <td data-label="Active Courses">22</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Beledweyne</td>
+                        <td data-label="Learning Hub Location">Main Learning Hub, Beledweyne</td>
+                        <td data-label="Enrolled Students">550</td>
+                        <td data-label="Active Courses">20</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Jowhar</td>
+                        <td data-label="Learning Hub Location">Education Quarter, Jowhar</td>
+                        <td data-label="Enrolled Students">480</td>
+                        <td data-label="Active Courses">18</td>
+                    </tr>
+                    <tr>
+                        <td data-label="City">Borama</td>
+                        <td data-label="Learning Hub Location">Students Street, Borama</td>
+                        <td data-label="Enrolled Students">450</td>
+                        <td data-label="Active Courses">15</td>
+                    </tr>
+                </tbody>
+            </table>
+    </main>
+    <!-- last--part -->
+    <footer>
+        <div class="alig">
+            <div class="footer">
+                <div class="footer-column">
+                    <div class="footer-logo">Description</div>
+                    <p>Graphic Designer & Developer</p>
+                    <p>Worked As A team</p>
+                    <p>Students at JUST</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">Exhibitions</a>
+                    <a href="#">Collections</a>
+                    <a href="#">Events</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Shop</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="footer-bottom">
+            copyright &copy; all rights reserved by: ABDIKHAFAAR HASSAN DHAQANE
+        </div>
+    </footer>
+</body>
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
+</script>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icon-01.png" type="image/x-icon" />
+    <title>Online_courses</title>
+    <style>
+        /* all website */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f6ff;
+        }
+
+        /* navigation */
+        .navbar {
+            background-color: #002e5b;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            max-width: 180px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .show {
+            display: flex !important;
+        }
+
+        /* the text of title */
+        main {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #1f2e88;
+            margin-bottom: 10px;
+        }
+
+        .psp {
+            color: #444;
+            margin: 10px 0 30px;
+            line-height: 1.6;
+        }
+
+        /*  part--one  */
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            background-color: #003366;
+            padding: 14px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffffff;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* the second title */
+        .sub-section {
+            margin-top: 60px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* the form */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 40px auto 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1f2e88;
+        }
+
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .contact-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* last--part */
+        .alig {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #002e5b;
+        }
+
+        .footer {
+            color: #ccc;
+            display: flex;
+            gap: 200px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #0073e6;
+        }
+
+        .footer-logo {
+            color: #0073e6;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: right;
+            padding: 6px;
+            text-transform: capitalize;
+            font-size: 8px;
+            border-top: 0 solid #222;
+            background-color: #002e5b;
+            color: white;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+        /* --- Responsive Menu Icon --- */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #002e5b;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .contact-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigations -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="contact.html" class="logo">
+                <img src="logo-01.png" alt="logo" />
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Gallery.htMl">Gallery</a></li>
+                <li><a href="date.html">Dates</a></li>
+                <li><a href="contact.html">Contact Us </a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <!-- part--one -->
+        <h2>Let's Contact Us you</h2>
+        <p class="psp">
+            Our platform is built on the principles of innovation, quality, and
+            inclusivity, aiming to provide a seamless learning and marketing
+            experience.
+        </p>
+        <!-- part--two -->
+        <div class="contact-cards">
+            <div class="card">
+                <h3>Main Office</h3>
+                <p class="psp">2972 Soomaalia , Mogadisho, Bakaaro Street.</p>
+                <a href="#">Find Location</a>
+            </div>
+            <div class="card">
+                <h3>Email Address</h3>
+                <p class="psp">info@onlinecourses@gmail.com<br />onlinecour@gmail.com</p>
+                <a href="#">Get In Touch</a>
+            </div>
+            <div class="card">
+                <h3>Phone Number</h3>
+                <p class="psp">+25261 2455737<br />+25268 6993014</p>
+                <a href="#">Contact Us Today!</a>
+            </div>
+        </div>
+        <!-- part--three -->
+        <div class="sub-section">
+            <h3>Have questions? Don't hesitate to contact us</h3>
+            <p class="psp">
+                We are passionate about transforming lives through education. We
+                believe in the power of knowledge to unlock opportunities and shape
+                the future.
+            </p>
+            <div class="rating">
+                ⭐⭐⭐⭐☆
+                <span>2.5k+ reviews (4.9 of 5)</span>
+            </div>
+        </div>
+        <!-- part--four -->
+        <form class="contact-form">
+            <h3>Get In Touch</h3>
+            <input type="text" placeholder="Enter Name" required />
+            <input type="email" placeholder="Enter Email" required />
+            <input type="text" placeholder="Enter Your Number" required />
+            <textarea placeholder="Enter Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message ➤</button>
+        </form>
+    </main>\
+    <!-- last--part -->
+    <footer>
+        <div class="alig">
+            <div class="footer">
+                <div class="footer-column">
+                    <div class="footer-logo">Description</div>
+                    <p>Graphic Designer & Developer</p>
+                    <p>Worked As A team</p>
+                    <p>Students at JUST</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">Exhibitions</a>
+                    <a href="#">Collections</a>
+                    <a href="#">Events</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Shop</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="footer-bottom">
+            copyright &copy; all rights reserved by: ABDIKHAFAAR HASSAN DHAQANE
+        </div>
+    </footer>
+</body>
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
+</script>
+
+</html>

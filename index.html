@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online_courses</title>
+  <link rel="shortcut icon" href="icon-01.png" type="image/x-icon" />
+  <style>
+    /* all website */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* navigation */
+    .navbar {
+      background-color: #002e5b;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      max-width: 120px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-login {
+      color: white;
+      border: 1px solid white;
+    }
+
+    .btn-signup {
+      background-color: white;
+      color: #004c99;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    /* part--one */
+    .topcontent {
+      background: #e6eff7;
+    }
+
+    .hero {
+      align-items: center;
+      padding: 80px 30px 0 80px;
+      display: flex;
+      max-width: 1200px;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      max-width: 50%;
+      padding-bottom: 30px;
+    }
+
+    .hero-text h1 {
+      margin-top: 20px;
+      font-size: 4em;
+      font-weight: 800;
+      line-height: 70px;
+      color: #002e5b;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+    }
+
+    .hero-text button {
+      padding: 10px 20px;
+      background: #004c99;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .hero-image img {
+      max-width: 400px;
+    }
+
+    /* part--two */
+    .section-title {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 0px;
+      color: #002e5b;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .courses {
+      display: flex;
+      margin-top: 0;
+      gap: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .course-card:hover {
+      box-shadow: 0 2px 10px #004d9937;
+      cursor: pointer;
+    }
+
+    .course-card {
+      text-align: left;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+
+    .course-card h3 {
+      font-size: 30px;
+    }
+
+    .course-card p {
+      margin: 5px 0;
+    }
+
+    .btn-Course {
+      background-color: #002e5b;
+      color: white;
+    }
+
+    /* part--three  */
+    .quote-part {
+      background: #004c99;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 2em;
+    }
+
+    /* part--four  */
+    .the-courses {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .title3 {
+      margin-top: 20px;
+      text-align: left;
+      margin-left: -1087px;
+      font-size: 1.5em;
+      padding-left: 18px;
+      color: #002e5b;
+    }
+
+    .the-course {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #f9f9f9;
+      width: 300px;
+      height: 200px;
+    }
+
+    .the-course p {
+      font-size: 1em;
+      font-weight: 800;
+      color: #0073e6;
+    }
+
+    .the-course:hover {
+      box-shadow: 0 2px 5px #004d9974;
+      cursor: pointer;
+    }
+
+    /* part--five */
+    .info {
+      display: flex;
+      gap: 100px;
+      justify-content: center;
+      background: linear-gradient(90deg, #004c99, #0073e6);
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .stats div {
+      flex: 1;
+    }
+
+    /* part--six */
+    .manager-quote {
+      background-color: #0271ee82;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .quote-text {
+      font-size: 24px;
+      font-style: italic;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .manager-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .manager-name {
+      font-weight: bold;
+    }
+
+    .manager-title {
+      opacity: 0.8;
+    }
+
+    /* part--Seven */
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .stat-card {
+      width: 290px;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .stat-card .stat-number {
+      font-size: 36px;
+      font-weight: bold;
+      color: #4a90e2;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .stat-card .stat-description {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* last -- part */
+    .alig {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px;
+      /* text-align: center; */
+      background-color: #002e5b;
+
+    }
+
+    .footer {
+      color: #ccc;
+      display: flex;
+      gap: 200px;
+    }
+
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+    }
+
+    .footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #0073e6;
+    }
+
+    .footer-logo {
+      color: #0073e6;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      text-align: right;
+      padding: 6px;
+      text-transform: capitalize;
+      font-size: 8px;
+      border-top: 0 solid #222;
+      background-color: #002e5b;
+      color: white;
+    }
+
+    /* --- Responsive Navigation --- */
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0073e63a;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        padding: 10px;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    /* --- Responsive Hero Section --- */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
+    }
+
+    /* --- Courses and Cards --- */
+    @media (max-width: 768px) {
+
+      .courses,
+      .the-courses,
+      .stats-grid,
+      .info {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .course-card,
+      .the-course,
+      .stat-card {
+        width: 90%;
+      }
+    }
+
+    /* --- Title Alignment Fix --- */
+    @media (max-width: 768px) {
+      .title3 {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+
+    /* --- Footer Bottom --- */
+    @media (max-width: 768px) {
+      .footer-bottom {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigations -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo-01.png" alt="logo" /></a>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="login.html">Home</a></li>
+        <li><a href="login.htMl">Gallery</a></li>
+        <li><a href="login.html">Dates</a></li>
+        <li><a href="login.html">Contact Us</a></li>
+        <li><a href="login.html">About Us</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-login">Login</a>
+        <a href="signin.html" class="btn btn-signup">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- part------one  -->
+    <section class="topcontent">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>
+            Bilow <br />Barashada,<br />
+            Xirfad
+          </h1>
+          <p>
+            ku soo dhawoow online courses, online courses waxay bixisaa
+            courses kala duwaan kuwaas ay ugu talagashay dhalinyarada
+            soomaliyeed ee joogo dunida daafaheeda kala duwan.
+          </p>
+          <button>Explore Courses</button>
+        </div>
+        <div class="hero-image">
+          <img src="tryy-01-01.png" alt="Hero Illustration" />
+        </div>
+      </div>
+    </section>
+    <!-- part---two -->
+    <div class="lecturesd">
+      <h2 class="section-title">Featured Lectures</h2>
+      <p class="section-subtitle">
+        Start learning with these popular lectures from our expert
+        instructors.
+      </p>
+    </div>
+    <div class="courses">
+      <div class="course-card">
+        <div
+          style="width: 370p100x;  height: 300px; background-image: url(Developer-01.jpg); background-size: 100%; background-repeat: no-repeat;">
+        </div>
+        <h3>Full Stack Development</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+      <div class="course-card">
+        <div
+          style="width: 370p100x; height: 300px; background-image: url(Basic-01.jpg); background-size: 100%; background-repeat: no-repeat">
+        </div>
+        <h3>Basic Computer</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+      <div class="course-card">
+        <div
+          style="width: 370p100x; height: 300px; background-image: url(analysis-01.jpg); background-size: 100%; background-repeat: no-repeat">
+        </div>
+        <h3>Data Anlaysis</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+    </div>
+    <div class="courses">
+      <div class="course-card">
+        <div
+          style="width: 370p100x;  height: 300px; background-image: url(Python\ Machine\ Learning\ Solutions-01.jpg); background-size: 100%; background-repeat: no-repeat">
+        </div>
+        <h3>Python Programming</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+      <div class="course-card">
+        <div
+          style="width: 370p100x;  height: 300px; background-image: url(technology-01.jpg); background-size: 100%; background-repeat: no-repeat">
+        </div>
+        <h3>System Management</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+      <div class="course-card">
+        <div
+          style="width: 370p100x;  height: 300px; background-image: url(CyberSecurity-01.jpg); background-size: 100%; background-repeat: no-repeat">
+        </div>
+        <h3>CyberSecurity Analyst</h3>
+        <p>4.3 ★★★★☆ (327)</p>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-Course">Watch Now</a>
+      </div>
+    </div>
+    <!-- part--three -->
+    <div class="quote-part">
+      <p>
+        upgrade your skills and know-<br>ledge with our online course
+      </p>
+    </div>
+    <!-- part--four -->
+    <div class="the-courses">
+      <h2 class="title3">| Our Course</h2><br>
+    </div>
+    <div class="the-courses">
+      <div class="the-course">
+        <img src="Data_analysis-01.png" width="100px" />
+        <p> Artificial Intelligence </p>
+      </div>
+      <div class="the-course">
+        <img src="coding_Mesa de trabajo 1.png" width="100px" />
+        <p> Web Developer </p>
+      </div>
+      <div class="the-course">
+        <img src="video_Mesa de trabajo 1.png" width="100px" />
+        <p> Video Editing </p>
+      </div>
+      <div class="the-course">
+        <img src="Database_Mesa de trabajo 1.png" width="100px" />
+        <p> Data Analysis </p>
+      </div>
+    </div>
+    <div class="the-courses">
+      <div class="the-course">
+        <img src="First_course-01.png" width="100px" />
+        <p> Data Base </p>
+      </div>
+      <div class="the-course">
+        <img src="UI_Mesa de trabajo 1.png" width="100px" />
+        <p> UI/ UX Designer</p>
+      </div>
+      <div class="the-course">
+        <img src="third_Mesa de trabajo 1.png" width="100px" />
+        <p> System Managment</p>
+      </div>
+      <div class="the-course">
+        <img src="Business-01.png" width="150px" />
+        <p>Working with business </p>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- part--five -->
+    <div class="info">
+      <div>
+        <h3>250K+</h3>
+        <p> Student Graduated </p>
+      </div>
+      <div>
+        <h3>10+</h3>
+        <p> Courses</p>
+      </div>
+      <div>
+        <h3>99%</h3>
+        <p>Success Rate</p>
+      </div>
+      <div>
+        <h3>200K+</h3>
+        <p> Student Projects</p>
+      </div>
+    </div>
+    <!-- part--six -->
+    <div class="manager-quote">
+      <div class="quote-text">
+        "Education is the key to success. We are committed to providing quality
+        online education that is accessible to everyone, everywhere."
+      </div>
+      <div class="manager-photo" style="background-image: url(Profile-01.jpg);"></div>
+      <div class="manager-name">Eng Dhaqane</div>
+      <div class="manager-work">CEO & Founder</div>
+    </div>
+    <!-- part--seven -->
+    <div class=".the-courses">
+      <h2 class="section-title">Our Success</h2>
+      <p class="section-subtitle">
+        Numbers that show our commitment to student success and quality
+        education.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🎓</div>
+          <div class="stat-number">15,427</div>
+          <div class="stat-label">Students Graduated</div>
+          <div class="stat-description">Successfully completed courses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-number">1,250</div>
+          <div class="stat-label">Total Courses</div>
+          <div class="stat-description">Across multiple subjects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📂</div>
+          <div class="stat-number">8,340</div>
+          <div class="stat-label">Projects Completed</div>
+          <div class="stat-description">Real-world projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-number">96.8%</div>
+          <div class="stat-label">Success Rate</div>
+          <div class="stat-description">Student satisfaction</div>
+        </div>
+      </div>
+    </div>
+    <!-- last -- part -->
+    <footer>
+      <div class="alig">
+        <div class="footer">
+          <div class="footer-column">
+            <div class="footer-logo">Description</div>
+            <p> Graphic Designer & Developer </p>
+            <p> Worked As A team </p>
+            <p> Students at JUST </p>
+          </div>
+          <div class="footer-column">
+            <h3>Links</h3>
+            <a href="login.html">Home</a>
+            <a href="login.html">Exhibitions</a>
+            <a href="login.html">Collections</a>
+            <a href="login.html">Events</a>
+          </div>
+          <div class="footer-column">
+            <h3>Information</h3>
+            <a href="login.html">About</a>
+            <a href="login.html">Contact</a>
+            <a href="login.html">Blog</a>
+            <a href="login.html">Shop</a>
+          </div>
+          <div class="footer-column">
+            <h3>Social</h3>
+            <a href="login.html">Twitter</a>
+            <a href="login.html">Instagram</a>
+            <a href="login.html">Facebook</a>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="footer-bottom">
+        copyright &copy; all rights reserved by: ABDIKHAFAAR HASSAN DHAQANE
+      </div>
+    </footer>
+</body>
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('show');
+  }
+</script>
+
+</html>
