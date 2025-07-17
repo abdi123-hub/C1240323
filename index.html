@@ -154,13 +154,20 @@
       margin-right: auto;
     }
 
-    .courses {
-      display: flex;
-      margin-top: 0;
+    .course-container {
+      max-width: 1200px;
+      margin: 10px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 40px 20px;
-      text-align: center;
-      justify-content: center;
+    }
+
+    .course-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.);
+      text-align: left;
     }
 
     .course-card:hover {
@@ -175,15 +182,19 @@
       background: #f9f9f9;
     }
 
-    .course-card h3 {
-      font-size: 30px;
+    .course-cardT h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .course-card p {
-      margin: 5px 0;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
     }
 
-    .btn-Course {
+    .btn-CourseT {
+
       background-color: #002e5b;
       color: white;
     }
@@ -251,7 +262,7 @@
 
     /* part--six */
     .manager-quote {
-      background-color: #0271ee82;
+      background-color: #002e5b47;
       color: white;
       text-align: center;
       padding: 60px 20px;
@@ -390,81 +401,35 @@
       cursor: pointer;
     }
 
+    /* === Responsive Login & Sign Up inside Hamburger === */
     @media (max-width: 768px) {
+      .nav-container {
+        position: relative;
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
-        background: #0073e63a;
+        background: #002e5b4f;
         position: absolute;
-        top: 60px;
+        top: 115px;
         right: 20px;
-        width: 150px;
+        width: 180px;
         padding: 10px;
+      }
+
+      .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
       }
 
       .menu-icon {
         display: block;
       }
-    }
 
-    /* --- Responsive Hero Section --- */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        padding: 40px 20px;
-        text-align: center;
-      }
-
-      .hero-text {
-        max-width: 100%;
-      }
-
-      .hero-text h1 {
-        font-size: 2.5em;
-        line-height: 1.2;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-      }
-    }
-
-    /* --- Courses and Cards --- */
-    @media (max-width: 768px) {
-
-      .courses,
-      .the-courses,
-      .stats-grid,
-      .info {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .footer {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .course-card,
-      .the-course,
-      .stat-card {
-        width: 90%;
-      }
-    }
-
-    /* --- Title Alignment Fix --- */
-    @media (max-width: 768px) {
-      .title3 {
-        margin-left: 0;
-        text-align: center;
-      }
-    }
-
-    /* --- Footer Bottom --- */
-    @media (max-width: 768px) {
-      .footer-bottom {
-        text-align: center;
+      .show {
+        display: flex !important;
       }
     }
   </style>
@@ -518,57 +483,50 @@
         instructors.
       </p>
     </div>
-    <div class="courses">
+    <div class="course-container">
       <div class="course-card">
-        <div
-          style="width: 370p100x;  height: 300px; background-image: url(Developer-01.jpg); background-size: 100%; background-repeat: no-repeat;">
-        </div>
+        <img src="Developer-01.jpg" alt="picture3" style="width: 100%" />
         <h3>Full Stack Development</h3>
         <p>4.3 ★★★★☆ (327)</p>
-        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
       <div class="course-card">
-        <div
-          style="width: 370p100x; height: 300px; background-image: url(Basic-01.jpg); background-size: 100%; background-repeat: no-repeat">
-        </div>
+        <img src="Basic-01.jpg" alt="picture3" style="width: 100%" />
         <h3>Basic Computer</h3>
         <p>4.3 ★★★★☆ (327)</p>
-        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
       <div class="course-card">
-        <div
-          style="width: 370p100x; height: 300px; background-image: url(analysis-01.jpg); background-size: 100%; background-repeat: no-repeat">
-        </div>
+        <img src="analysis-01.jpg" alt="picture3" style="width: 100%" />
         <h3>Data Anlaysis</h3>
         <p>4.3 ★★★★☆ (327)</p>
-        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
     </div>
-    <div class="courses">
+    <div class="course-container">
       <div class="course-card">
-        <div
-          style="width: 370p100x;  height: 300px; background-image: url(Python\ Machine\ Learning\ Solutions-01.jpg); background-size: 100%; background-repeat: no-repeat">
-        </div>
+        <img src="Python Machine Learning Solutions-01.jpg" alt="picture3" style="width: 100%" />
         <h3>Python Programming</h3>
         <p>4.3 ★★★★☆ (327)</p>
-        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
       <div class="course-card">
-        <div
-          style="width: 370p100x;  height: 300px; background-image: url(technology-01.jpg); background-size: 100%; background-repeat: no-repeat">
-        </div>
+        <img src="technology-01.jpg" alt="picture3" style="width: 100%" />
         <h3>System Management</h3>
         <p>4.3 ★★★★☆ (327)</p>
-        <p><b>$12.99</b></p><a href="login.html" class="btn btn-Course">Watch Now</a>
+        <p><b>$12.99</b></p>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
       <div class="course-card">
-        <div
-          style="width: 370p100x;  height: 300px; background-image: url(CyberSecurity-01.jpg); background-size: 100%; background-repeat: no-repeat">
-        </div>
+        <img src="CyberSecurity-01.jpg" alt="picture3" style="width: 100%" />
         <h3>CyberSecurity Analyst</h3>
         <p>4.3 ★★★★☆ (327)</p>
         <p><b>$12.99</b></p>
-        <a href="login.html" class="btn btn-Course">Watch Now</a>
+        <a href="login.html" class="btn btn-CourseT">Watch Now</a>
       </div>
     </div>
     <!-- part--three -->
